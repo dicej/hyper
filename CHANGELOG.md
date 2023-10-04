@@ -20,7 +20,7 @@
 
 #### Breaking Changes
 
-* Any IO transport type provided must not implement `hyper::rt::{Read, Write}` instead of
+* Any IO transport type provided must now implement `hyper::rt::{Read, Write}` instead of
   `tokio::io` traits. You can grab a helper type from `hyper-util` to wrap Tokio types, or implement the traits yourself,
   if it's a custom type.
  ([f9f65b7a](https://github.com/hyperium/hyper/commit/f9f65b7aa67fa3ec0267fe015945973726285bc2))
