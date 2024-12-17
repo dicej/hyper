@@ -28,3 +28,6 @@ mod util;
 pub use self::http::HttpService;
 pub use self::service::Service;
 pub use self::util::service_fn;
+
+#[cfg(all(feature = "server", any(feature = "http1", feature = "http2")))]
+pub use self::http::InformationalSender;

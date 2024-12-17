@@ -47,6 +47,12 @@ where
 {
 }
 
+/// Request extension type for sending one or more informational responses prior
+/// to the final response.
+#[cfg(all(feature = "server", any(feature = "http1", feature = "http2")))]
+#[derive(Clone, Debug)]
+pub struct InformationalSender(pub futures_channel::mpsc::Sender<Response<()>>);
+
 mod sealed {
     pub trait Sealed<T> {}
 }
